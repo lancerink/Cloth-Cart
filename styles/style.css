@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
+    body {
+        margin: 20px;
+        color: #222222;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+
+/* Style the header */
+header {
+  background-color: #F6F6F7;
+  padding: 10px;
+  text-align: right;
+  font-size: 18px;
+  color: #222222;
+}
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+picture {
+    float: left;
+    width: 40
+}
+.item {
+  float:left;
+  width:40%;
+  padding:0 20px;
+}
+.right {
+  background-color:#F6F6F7;
+  float:left;
+  width:60%;
+  padding:15px;
+  margin-top:7px;
+  text-align:center;
+}
+.right .itemtile{
+
+    text-align: left;
+    font-size: 700;
+    font-style: initial;
+    
+}
+.right .price{
+    margin-top: 40px;
+    text-align: left;
+    font-size: 65;
+    font-style: initial;
+  
+}
+.right .desc{
+    margin-top:40px;
+    text-align: left;
+    font-size: 80;
+    
+    font-style: initial;
+    color: black;
+}
+.right .size{
+    margin-top:40px;
+    text-align: left;
+    font-size: 80;
+    font-style: initial;
+   
+}
+.right .button{
+    margin-top:40px;
+    text-align: left;
+    font-style: initial;
+    
+}
+button {
+ background-color: rgb(9, 240, 248);
+ margin-top: 0rem;
+ font-size: 0.75em;
+ text-align:center;
+ width: 3rem;
+ height: 3rem;
+
+}
+.right .add{
+ margin-top: 1.5rem;
+ background-color: #F6F6F7;
+ width: 100%;
+ height: 1rem;
+ text-align: left;
+ font-weight: bold;
+ position: absolute;
+
+}
+ /* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800rem) {
+    .left, .item, .right {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }   
+  table, th, td {
+    border-bottom: 0.15rem solid ;
+    border-color:#CCCCCC;
+  }
+  /* Colour Schemes:
+
+Header background: #F6F6F7
+
+Font colour:  #222222 and #888888
+
+Required star *: #C90000
+
+Border light grey: #CCCCCC
+
+Border dark grey #222222 */
+  
+
+  
