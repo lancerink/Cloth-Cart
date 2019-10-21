@@ -1,278 +1,125 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cloth cart</title>
-<script src="https://code.jquery.com/jquery-2.1.3.js"></script>
-<script src="./scripts/funtions.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloth cart</title>
+    <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+    <script src="./scripts/funtions.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
 
-<style>
-* {
-  box-sizing: border-box;
-}
 
-    body {
-        margin: 20px;
-        color: #222222;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    
-
-/* Style the header */
-header {
-  background-color: #F6F6F7;
-  padding: 10px;
-  text-align: right;
-  font-size: 18px;
-  color: #888888;
-  min-width:435px;
-  max-height:40px;
-}
-header a:hover {
- 
-}
-.minicart {
-    max-width: 450px;
-    max-height: 550px;
-    min-width:  350px;
-    min-height: 550px;
-    float:right;
-    z-index: 9999;
-    position: fixed ! important; 
-    right: 10px; top: 60px;
-    padding: 10px;
-    background-color: white;
-    display: none;
-} 
-.minicart .teeimg{
-    margin-left: 20px;
-    margin-top: 10px;
-    margin-right: 20px;
-    width: 45%;
-    float: left;
-}
-.minicart .teedesc{
-    margin-left: 20px;
-    margin-top: 10px;
-    margin-right: 20px;
-    width: 55%;
-    text-align: left;
-    
-}
-
-/* Clear floats after the columns */
-section{
-    margin-top:10px;
-}
-section:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-picture {
-    float: left;
-     width:40%;
-     padding-right: 3rem;
-}
-.item {
-  float:left;
-  width:40%;
-  
-}
-.right {
-  background-color:white;
-  float:left;
-  width:60%;
-  padding:15px;
-  margin-top:7px;
-  text-align:center;
-   min-width:435px;
-}
-.right .itemtile{
-
-    text-align: left;
-    
-    font-style: initial;
-    
-}
-.right .price{
-    margin-top: 20px;
-    text-align: left;
-  
-    font-style: initial;
-  
-}
-.right .desc{
-    margin-top:40px;
-    text-align: left;
-    
-    
-    font-style: initial;
-    color: #888888;
-}
-.size{
-    margin-top:40px;
-    text-align: left;
-    font-style: initial;
-    color: #888888;
-    
-}
-.button{
-    margin-top: 0rem;
-    text-align: left;
-    font-style: initial;
-    
-}
-button {
- background-color: white;
- margin-top: 0rem;
- font-size: 0.75em;
- text-align: center;
- width: 3rem;
- height: 3rem;
- border-color:#CCCCCC;
- border-style:  solid!important ;
-}
-.right .add{
- margin-top: 1.5rem;
- background-color: white;
- width: 100%;
- text-align: left;
- font-weight: bold;
- 
-}
-.star{
- 
-  color:#C90000
-}
-.line{
-    border-bottom: 0.05rem solid;
-    border-color:#CCCCCC;
-}
- /* Use a media query to add a breakpoint at 800px: */
-@media screen and (max-width: 800px) {
-    .left,  .right {
-      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-    }
-  }
-    
-</style>
 </head>
 <body>
-<header>
-<a onMouseOver="onHover(this)" onMouseOut="onMouseOut(this)">My cart(</a><a id="count">0</a><a>)</a>
-<div id="minicart" class="minicart">
+    <header>
+        <a onMouseOver="onHover(this)" onMouseOut="onMouseOut(this)">My cart(</a><a id="count">0</a><a>)</a>
+        <div id="minicart" class="minicart">
 
-<table  style="position:absolute">
-<tr>
-<td  class="teeimg">
- <img src="./images/classic-tee.jpg" style="width:auto;max-width:75px;">
-</td>
-<td class="teedesc">
-<a style="font-weight:bold;color:#222222;margin-top:20px;">Classic Tee</a>
-  </br>
-  <div style="height:10px;"></div>
-   <a id="size_s_count">1x </a>
-  <a style="font-weight:bold;color:#222222;margin-top:40px;"> $75.00</a>
-  </br>
-  <div style="height:20px;"></div>
-   <a>Size:</a><a style="font-weight:bold;color:#222222;margin-top:40px;">S</a>
-</td>
-</tr>
-<tr></tr>
-<tr >
-<td  class="teeimg">
-<img src="./images/classic-tee.jpg" style="width:auto;max-width:75px;">
-</td>
-<td class="teedesc">
-<a style="font-weight:bold;color:#222222;margin-top:20px;">Classic Tee</a>
-  </br>
-  <div style="height:10px;"></div>
-   <a id="size_l_count">3x </a>
-  <a style="font-weight:bold;color:#222222;margin-top:40px;"> $75.00</a>
-  </br>
-  <div style="height:20px;"></div>
-   <a>Size:</a><a style="font-weight:bold;color:#222222;margin-top:40px;">L</a>
-</td>
-</td>
-</tr>
-<tr >
-<td  class="teeimg">
-<img src="./images/classic-tee.jpg" style="width:auto;max-width:75px;">
-</td>
-<td class="teedesc">
-<a style="font-weight:bold;color:#222222;margin-top:20px;">Classic Tee</a>
-  </br>
-  <div style="height:10px;"></div>
-   <a id="size_m_count">2x </a>
-  <a style="font-weight:bold;color:#222222;margin-top:40px;"> $75.00</a>
-  </br>
-  <div style="height:20px;"></div>
-   <a>Size:</a><a style="font-weight:bold;color:#222222;margin-top:40px;">M</a>
-</td>
-</td>
-</tr>
-</table>
+            <table id="table1">
+                <tr>
+                    <td class="teeimg">
+                        <img src="./images/classic-tee.jpg" style="width:auto;max-width:75px;">
+                    </td>
+                    <td class="teedesc">
+                        <a class="classicT">Classic Tee</a>
+                        </br>
+                        <div style="height:10px;"></div>
+                        <a id="size_s_count">1x </a>
+                        <a class="priceInCart"> $75.00</a>
+                        </br>
+                        <div style="height:20px;"></div>
+                        <a>Size:</a><a class="sizeInCart">S</a>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td class="teeimg">
+                        <img src="./images/classic-tee.jpg" style="width:auto;max-width:75px;">
+                    </td>
+                    <td class="teedesc">
+                        <a class="classicT">Classic Tee</a>
+                        </br>
+                        <div style="height:10px;"></div>
+                        <a id="size_m_count">1x </a>
+                        <a class="priceInCart"> $75.00</a>
+                        </br>
+                        <div style="height:20px;"></div>
+                        <a>Size:</a><a class="sizeInCart">M</a>
+                    </td>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="teeimg">
+                        <img src="./images/classic-tee.jpg" style="width:auto;max-width:75px;">
+                    </td>
+                    <td class="teedesc">
+                        <a class="classicT">Classic Tee</a>
+                        </br>
+                        <div style="height:10px;"></div>
+                        <a id="size_l_count">1x </a>
+                        <a class="priceInCart"> $75.00</a>
+                        </br>
+                        <div style="height:20px;"></div>
+                        <a>Size:</a><a class="sizeInCart">L</a>
+                    </td>
+                    </td>
+                </tr>
+            </table>
 
 
-</div>
-</header>
+        </div>
+    </header>
 
-<section>
-<picture>
-  <source media="(min-width: 465px)" srcset="./images/classic-tee.jpg">
-  <img src="./images/classic-tee.jpg" style="width:auto;max-width:435px;">
-</picture>
+    <section>
+        <picture>
+            <source media="(min-width: 465px)" srcset="./images/classic-tee.jpg">
+            <img src="./images/classic-tee.jpg" style="width:auto;max-width:435px;">
+        </picture>
 
-<div class="right">
-<table style="width:100%">
-<tr>
-    <H2 class="itemtile">Classic Tee</H2>
-    <div class="line"></div>
-</tr>
-<tr>
- <H3 class="price">$75.00</H3>
- <div class="line"></div>
-</tr>
-<tr>
-<div class="desc">
-        <p>
-             Dolor sit amet, consectetur adipiscing elit. Haec ettu ita posuisti, et verba vestra sunt.</br>
-             </br>
-             Quod autemratione actum est, id officium appellamus dolor sitamet, consectetur adipiscing elit. </br>
-             </br>
-             Haec et tu itaposuisti, et verba vestra sunt.</br>
-             </br>
-             Quod autem rationeactum est, id officium appellamus
-        </p>
-    </div>
-</tr>
-<tr >
- <td style="width:38px;height:35px"><p class="size">SIZE<a style="color:#C90000;">*<a></p4></td>
- <td style="float:left;width:38px;height:35px;"><p style="margin-top:25px;color:#C90000;font-size:2em;" id="sizeno"></p></td>
+        <div class="right">
+            <table style="width:100%">
+                <tr>
+                    <H2 class="itemtile">Classic Tee</H2>
+                    <div class="line"></div>
+                </tr>
+                <tr>
+                    <H3 class="price">$75.00</H3>
+                    <div class="line"></div>
+                </tr>
+                <tr>
+                    <div class="desc">
+                        <pre>
+Dolor sit amet, consectetur adipiscing elit. Haec ettu ita posuisti, et verba vestra sunt.
 
- 
-</tr>
-<tr>
+Quod autemratione actum est, id officium appellamus dolor sitamet, consectetur adipiscing elit.
 
-</tr>
-<tr>
-</tr>
+Haec et tu itaposuisti, et verba vestra sunt.
 
-</table>
-   
-    <div class="button">
-        <button id="btn_s" onClick="sizeOnClick(this)" value-"S">S</button>
-        <button id="btn_m" onClick="sizeOnClick(this)" value="M">M</button>
-        <button id="btn_l" onClick="sizeOnClick(this)" value="L">L</button>
-    </div>
-    <div class="add">
-        <button onClick="add_to_cart(this)" value="" style="width:10rem!important;height:2.5rem!important;border-color:black;  font-weight: bold!important;">ADD TO CART</button>
-    </div>
-   
-    
-  </div>
-</section>
+Quod autem rationeactum est, id officium appellamus
+                        </pre>
+                    </div>
+                </tr>
+                <tr>
+                    <td style="width:38px;height:35px"><p class="size">SIZE<a style="color:#C90000;">*<a></p4></td>
+                    <td style="float:left;width:38px;height:35px;"><p id="sizeno"></p></td>
+
+                </tr>
+                <tr></tr>
+                <tr></tr>
+
+            </table>
+
+            <div class="button">
+                <button id="btn_s" onClick="sizeOnClick(this)" value-"S">S</button>
+                <button id="btn_m" onClick="sizeOnClick(this)" value="M">M</button>
+                <button id="btn_l" onClick="sizeOnClick(this)" value="L">L</button>
+            </div>
+            <div class="add">
+                <button id="addButton" onClick="add_to_cart(this)" value="" >ADD TO CART</button>
+            </div>
+
+
+        </div>
+    </section>
 </body>
 </html>

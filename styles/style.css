@@ -1,120 +1,199 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-    body {
-        margin: 20px;
-        color: #222222;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    
+body {
+    margin: 20px;
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 /* Style the header */
 header {
-  background-color: #F6F6F7;
-  padding: 10px;
-  text-align: right;
-  font-size: 18px;
-  color: #222222;
+    background-color: #F6F6F7;
+    padding: 10px;
+    text-align: right;
+    font-size: 18px;
+    color: #888888;
+    min-width: 435px;
+    max-height: 40px;
 }
+
+body {
+    margin: 20px;
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+    header a:hover {
+    }
+
+.minicart {
+    max-width: 450px;
+    max-height: 550px;
+    min-width: 350px;
+    min-height: 550px;
+    float: right;
+    z-index: 9999;
+    position: fixed !important;
+    right: 10px;
+    top: 60px;
+    padding: 10px;
+    background-color: white;
+    display: none;
+}
+
+    .minicart .teeimg {
+        margin-left: 20px;
+        margin-top: 10px;
+        margin-right: 20px;
+        width: 45%;
+        float: left;
+    }
+
+    .minicart .teedesc {
+        margin-left: 20px;
+        margin-top: 10px;
+        margin-right: 20px;
+        width: 55%;
+        text-align: left;
+    }
+
 /* Clear floats after the columns */
-section:after {
-  content: "";
-  display: table;
-  clear: both;
+section {
+    margin-top: 10px;
 }
+
+section:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
 picture {
     float: left;
-    width: 40
+    width: 40%;
+    padding-right: 3rem;
 }
-.item {
-  float:left;
-  width:40%;
-  padding:0 20px;
-}
-.right {
-  background-color:#F6F6F7;
-  float:left;
-  width:60%;
-  padding:15px;
-  margin-top:7px;
-  text-align:center;
-}
-.right .itemtile{
 
-    text-align: left;
-    font-size: 700;
-    font-style: initial;
-    
+.item {
+    float: left;
+    width: 40%;
 }
-.right .price{
+
+.right {
+    background-color: white;
+    float: left;
+    width: 60%;
+    padding: 15px;
+    margin-top: 7px;
+    text-align: center;
+    min-width: 435px;
+}
+
+    .right .itemtile {
+        text-align: left;
+        font-style: initial;
+    }
+
+    .right .price {
+        margin-top: 20px;
+        text-align: left;
+        font-style: initial;
+    }
+
+    .right .desc {
+        margin-top: 40px;
+        text-align: left;
+        font-style: initial;
+        color: #888888;
+        font-size:0.9em;
+    }
+
+.size {
     margin-top: 40px;
     text-align: left;
-    font-size: 65;
     font-style: initial;
-  
+    color: #888888;
 }
-.right .desc{
-    margin-top:40px;
-    text-align: left;
-    font-size: 80;
-    
-    font-style: initial;
-    color: black;
-}
-.right .size{
-    margin-top:40px;
-    text-align: left;
-    font-size: 80;
-    font-style: initial;
-   
-}
-.right .button{
-    margin-top:40px;
+
+.button {
+    margin-top: 0rem;
     text-align: left;
     font-style: initial;
-    
 }
+
 button {
- background-color: rgb(9, 240, 248);
- margin-top: 0rem;
- font-size: 0.75em;
- text-align:center;
- width: 3rem;
- height: 3rem;
-
+    background-color: white;
+    margin-top: 0rem;
+    font-size: 0.75em;
+    text-align: center;
+    width: 3rem;
+    height: 3rem;
+    border-color: #CCCCCC;
+    border-style: solid !important;
 }
-.right .add{
- margin-top: 1.5rem;
- background-color: #F6F6F7;
- width: 100%;
- height: 1rem;
- text-align: left;
- font-weight: bold;
- position: absolute;
 
+.right .add {
+    margin-top: 1.5rem;
+    background-color: white;
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
 }
- /* Use a media query to add a breakpoint at 800px: */
-@media screen and (max-width: 800rem) {
-    .left, .item, .right {
-      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+
+#addButton {
+    width: 10rem;
+    height: 2.5rem;
+    border-color: black;
+    font-weight: bold;
+    
+}
+
+#table1{
+    position:absolute;
+}
+
+#sizeno {
+    margin-top: 25px;
+    color: #C90000;
+    font-size: 2em;
+}
+
+.star {
+    color: #C90000
+}
+
+.line {
+    border-bottom: 0.05rem solid;
+    border-color: #CCCCCC;
+}
+
+.classicT {
+    font-weight: bold;
+    color: #222222;
+    margin-top: 20px;
+}
+
+.sizeInCart {
+    font-weight:bold;color:#222222;margin-top:40px;
+}
+
+.priceInCart {
+    font-weight:bold;color:#222222;margin-top:40px;
+}
+
+
+
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+    .left, .right {
+        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
     }
-  }   
-  table, th, td {
-    border-bottom: 0.15rem solid ;
-    border-color:#CCCCCC;
-  }
-  /* Colour Schemes:
+}
 
-Header background: #F6F6F7
-
-Font colour:  #222222 and #888888
-
-Required star *: #C90000
-
-Border light grey: #CCCCCC
-
-Border dark grey #222222 */
   
 
   
